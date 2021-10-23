@@ -17,7 +17,8 @@ class LongestSubstring:
 
     def lengthOfLongestSubstring(self):
         final_dict = {}
-
+        if self.string == ' ':
+            return 1
         for char in self.string:
             if char not in self.newstr:
                 self.newstr += char
@@ -37,12 +38,16 @@ class LongestSubstring:
         return max_str
 
 
-obj1 = LongestSubstring('abcabcbb')
-obj2 = LongestSubstring('pwwkew')
-obj3 = LongestSubstring('bbbbb')
-final_str1 = obj1.lengthOfLongestSubstring()
-final_str2 = obj2.lengthOfLongestSubstring()
+# obj1 = LongestSubstring('abcabcbb')
+# obj2 = LongestSubstring('pwwkew')
+# obj3 = LongestSubstring('bbbbb')
+obj3 = LongestSubstring(' ')
+
+# final_str1 = obj1.lengthOfLongestSubstring()
+# final_str2 = obj2.lengthOfLongestSubstring()
+# final_str3 = obj3.lengthOfLongestSubstring()
 final_str3 = obj3.lengthOfLongestSubstring()
-print(final_str1)
-print(final_str2)
+
+# print(final_str1)
+# print(final_str2)
 print(final_str3)
