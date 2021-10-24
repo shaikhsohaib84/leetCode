@@ -8,7 +8,7 @@ class LongestSubstring:
         Explanation: The answer is "wke", with the length of 3.
         Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
         
-        [abcabcbb, pwwkew, bbbbb]
+        ['abcabcbb', 'pwwkew', 'bbbbb', ' ', 'c', 'au', 'aab', "abcabcbb", 'dfdv']
     '''
     
     def __init__(self, string, newstr=''):
@@ -17,8 +17,7 @@ class LongestSubstring:
 
     def lengthOfLongestSubstring(self):
         final_dict = {}
-        if self.string == ' ':
-            return 1
+        if len(self.string) == 1: return 1
         for char in self.string:
             if char not in self.newstr:
                 self.newstr += char
@@ -27,27 +26,16 @@ class LongestSubstring:
                 self.newstr = ''
                 if char not in self.newstr:
                     self.newstr += char
+        dict_max_len = len(max(final_dict, key=final_dict.get)) if final_dict else 0
+        new_str_len = len(self.newstr)
+        max_str_len = max(dict_max_len, new_str_len)
+
         
-        max_str = ''
-        temp_value = 0
-        for key, value in final_dict.items():
-            if value > temp_value:
-                temp_value = value
-                max_str = key
-
-        return max_str
+        return (max_str_len)
 
 
-# obj1 = LongestSubstring('abcabcbb')
-# obj2 = LongestSubstring('pwwkew')
-# obj3 = LongestSubstring('bbbbb')
-obj3 = LongestSubstring(' ')
+obj1 = LongestSubstring('dfdv')
 
-# final_str1 = obj1.lengthOfLongestSubstring()
-# final_str2 = obj2.lengthOfLongestSubstring()
-# final_str3 = obj3.lengthOfLongestSubstring()
-final_str3 = obj3.lengthOfLongestSubstring()
+final_str1 = obj1.lengthOfLongestSubstring()
 
-# print(final_str1)
-# print(final_str2)
-print(final_str3)
+print(final_str1)
