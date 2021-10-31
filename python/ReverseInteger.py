@@ -1,17 +1,12 @@
-a = [123, -123, 120, 0, -10, 901000]
+a = [123, -123, 120, 0, -10, 901000, 1534236469]
 
 def reverseInteger(num):
-    if num > 0:
-        res = ''.join(reversed(str(num)))
-        if "0" in res:
-            res = res.replace("0", '')
-        print(res)
+    if int(str(abs(num))[::-1]) > pow(2, 31): return 0
+    elif num > 0:
+        return int(str(num)[::-1])
     elif num < 0:
-        pos = str(num).split('-')[1]
-        res = ''.join(reversed(pos))
-        print(f"-{res}")
-    else:
-        print(0)
+        return int('-' + str(num).split('-')[1][::-1])
+    else: return 0
 
 
 reverseInteger(901000)

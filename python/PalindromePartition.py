@@ -25,7 +25,7 @@ temp_counter = 0
 for key, value in counter_dict.items():
     if value >= temp_counter:
         temp_counter = value
-        updated_dict[k] = name.find(key)
+        updated_dict[key] = name.find(key)
 
 def chk_palindrome(key, value):
     new_char = ''
