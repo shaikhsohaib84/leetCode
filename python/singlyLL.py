@@ -1,3 +1,4 @@
+import copy
 class Node:
     def __init__(self, data):
         self.data = data
@@ -7,48 +8,50 @@ class SLinkedList:
     def __init__(self):
         self.headval = None
     
+    def insert_node_start(self, value):
+        new_node = Node(value)
+        new_node.next = self.headval
+        self.headval = new_node
+    
+    def insert_node_last(self, value):
+        new_node = Node(value)
+        last = self.headval
+        if not last:
+            self.headval = new_node
+            return
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def insert_node_between(self, old_value, new_value):
+        new_node = Node(new_value)
+        flag = 0
+        curr_node = self.headval
+        if not curr_node:
+            self.headval = new_node
+            return
+        while curr_node.data != old_value:
+            curr_node = curr_node.next
+        if curr_node.data == old_value:
+            new_node.next = curr_node.next
+            curr_node.next = new_node
+            return
+        print('not found')
+    
+    def del_node_start(self):
+        head = self.headval
+
+
     def listNode(self):
         head = self.headval
         while head is not None:
             print(head.data)
             head = head.next
-    
-    def addNodeAtLast(self, data):
-        head = self.headval
-        if head is None:
-            self.headval = Node(data)
-        else:
-            head.next = Node(data)
-    
-    def addNodeAtStart(self, data):
-        head = self.headval
-        if head is None:
-            self.headval = Node(data)
-        else:
-            # new_node = Node(data)
-            # new_node.next = self.headval.next
-            # self.headval.next = new_node
-
-            new_node = Node(data)
-            new_node.next = self.headval
-            self.headval= new_node
-
-            
-
-
 
 n1 = SLinkedList()
+n1.insert_node_start('Monday')
+n1.insert_node_last('Tuesday')
+n1.insert_node_between('Tuesday1', 'Friday')
+n1.insert_node_last('Wednesday')
 
-n1.headval = Node('mon')
-n2 = Node('Tue')
-n3 = Node('Wed')
-
-n1.headval.next = n2
-n2.next = n3
-
-# n1.listNode()
-n1.addNodeAtLast('Thur')
-# n1.listNode()
-
-n1.addNodeAtStart('Fri')
 n1.listNode()
