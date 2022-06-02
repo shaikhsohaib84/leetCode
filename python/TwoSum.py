@@ -5,6 +5,7 @@ class TwoSum:
         You may assume that each input would have exactly one solution, and you may not use the same element twice.
         You can return the answer in any order.
     '''
+    # [3,2,3] 6
     def __init__(self, int_lst, target):
         self.int_lst = int_lst
         self.target = target
