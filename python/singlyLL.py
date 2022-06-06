@@ -25,7 +25,6 @@ class SLinkedList:
 
     def insert_node_between(self, old_value, new_value):
         new_node = Node(new_value)
-        flag = 0
         curr_node = self.headval
         if not curr_node:
             self.headval = new_node
@@ -51,6 +50,7 @@ class SLinkedList:
 n1 = SLinkedList()
 n1.insert_node_start('Monday')
 n1.insert_node_last('Tuesday')
+n1.insert_node_start('Monday_101')
 n1.insert_node_between('Tuesday1', 'Friday')
 n1.insert_node_last('Wednesday')
 
