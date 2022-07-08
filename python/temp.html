@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    // this.total = 0
+    let calc = {
+        total: 0,
+        add: (val) => {
+            this.total = parseInt(this.total) + parseInt(val)
+            return this.total
+        },
+        mul(val){
+            this.total = this.total * val
+            return this.total
+        },
+        sub(val){
+            this.total = this.total - val
+            return this.total
+        }
+    }
+
+    calc.add(10)
+    calc.mul(5)
+    calc.sub(30)
+    calc.add(10)
+    console.log(calc.total)
+    
+    
+   
+    
+</script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>

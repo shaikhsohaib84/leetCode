@@ -31,6 +31,6 @@ def merge_sort(lst):
 
 
 if __name__ == '__main__':
-    ms = [10, 80, 30, 90, 70]
+    ms = [8, 4, 2, 1]
     merge_sort(ms)
     print(ms)
