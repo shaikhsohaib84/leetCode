@@ -11,3 +11,4 @@ Debounce example - https://jsfiddle.net/shaikhsohaib84/vm8ro5fz/
 
 bind polyfill - https://jsfiddle.net/shaikhsohaib84/nar5tpck/16/
 
+React.memo - https://codesandbox.io/s/react-memo-t723mi?file=/src/Child.jsx
